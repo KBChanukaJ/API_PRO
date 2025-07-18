@@ -221,25 +221,7 @@ The website includes comprehensive API documentation with:
 8. **📚 SDKs** - Language-specific libraries
 9. **⏱️ Rate Limits** - Usage limitations
 
-## 🤝 Contributing
 
-This project was developed for educational purposes. If you'd like to contribute:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📞 Contact
-
-For questions about this project:
-- **Project Demo**: [Live Demo Link]
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn Profile]
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
