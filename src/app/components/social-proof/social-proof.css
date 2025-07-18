@@ -1,0 +1,70 @@
+.social-proof {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.social-proof-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.social-proof h2 {
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.company-logo {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.company-logo:hover {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.company-logo span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #64748b;
+  transition: color 0.3s ease;
+}
+
+.company-logo:hover span {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .companies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .company-logo {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .company-logo span {
+    font-size: 0.9rem;
+  }
+  
+  .social-proof h2 {
+    font-size: 1.5rem;
+  }
+}

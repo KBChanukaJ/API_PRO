@@ -1,0 +1,36 @@
+<div class="pricing-card" 
+     [class.popular]="plan.isPopular"
+     data-aos="zoom-in"
+     data-aos-duration="600">
+  <div *ngIf="plan.isPopular" 
+       class="popular-badge" 
+       data-aos="bounce" 
+       data-aos-delay="300">
+    Most Popular
+  </div>
+  
+  <div class="card-header" data-aos="fade-up" data-aos-delay="200">
+    <h3>{{ plan.name }}</h3>
+    <div class="price" data-aos="fade-up" data-aos-delay="400">{{ plan.price }}</div>
+  </div>
+  
+  <div class="card-body">
+    <ul class="features-list">
+      <li *ngFor="let feature of plan.features; let i = index" 
+          data-aos="fade-right" 
+          [attr.data-aos-delay]="300 + (i * 100)">
+        <span class="check-icon">✓</span>
+        {{ feature }}
+      </li>
+    </ul>
+  </div>
+  
+  <div class="card-footer" data-aos="fade-up" data-aos-delay="600">
+    <button 
+      class="select-button" 
+      [class.popular-button]="plan.isPopular"
+      (click)="onSelectPlan()">
+      {{ plan.buttonText }}
+    </button>
+  </div>
+</div>

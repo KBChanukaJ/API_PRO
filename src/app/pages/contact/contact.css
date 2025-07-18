@@ -1,0 +1,18 @@
+.contact-page {
+  padding: 5rem 0;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  margin-top: 80px;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-page {
+    padding: 2rem 0;
+  }
+}

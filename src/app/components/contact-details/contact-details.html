@@ -1,0 +1,43 @@
+<div class="contact-details">
+  <div class="details-grid">
+    <div class="detail-card" 
+         *ngFor="let detail of contactDetails; let i = index"
+         data-aos="flip-up" 
+         [attr.data-aos-delay]="200 + (i * 200)"
+         data-aos-duration="800">
+      <div class="detail-icon" data-aos="bounce" [attr.data-aos-delay]="400 + (i * 200)">
+        {{ detail.icon }}
+      </div>
+      <h3 data-aos="fade-up" [attr.data-aos-delay]="600 + (i * 200)">
+        {{ detail.title }}
+      </h3>
+      <p *ngIf="!detail.link" data-aos="fade-up" [attr.data-aos-delay]="800 + (i * 200)">
+        {{ detail.text }}
+      </p>
+      <a *ngIf="detail.link" 
+         [href]="detail.link" 
+         class="detail-link"
+         data-aos="fade-up" 
+         [attr.data-aos-delay]="800 + (i * 200)">
+        {{ detail.text }}
+      </a>
+    </div>
+  </div>
+  
+  <div class="additional-info" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+    <h3 data-aos="fade-up" data-aos-delay="800">Business Hours</h3>
+    <div class="hours-grid">
+      <div class="hour-item" 
+           *ngFor="let hour of [
+             {day: 'Monday - Friday', time: '9:00 AM - 6:00 PM EST'},
+             {day: 'Saturday', time: '10:00 AM - 2:00 PM EST'},
+             {day: 'Sunday', time: 'Closed'}
+           ]; let i = index"
+           data-aos="slide-up" 
+           [attr.data-aos-delay]="1000 + (i * 100)">
+        <span class="day">{{ hour.day }}</span>
+        <span class="time">{{ hour.time }}</span>
+      </div>
+    </div>
+  </div>
+</div>

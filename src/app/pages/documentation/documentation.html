@@ -1,0 +1,13 @@
+<div class="documentation-page">
+  <div class="doc-header">
+    <div class="doc-header-content">
+      <h1>API PRO Developer Documentation</h1>
+      <p>Everything you need to integrate with our API</p>
+    </div>
+  </div>
+  
+  <div class="doc-layout">
+    <app-doc-sidebar (itemSelected)="onSectionChange($event)"></app-doc-sidebar>
+    <app-doc-content [activeSection]="activeSection"></app-doc-content>
+  </div>
+</div>

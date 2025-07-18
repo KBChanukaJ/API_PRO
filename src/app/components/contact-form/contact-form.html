@@ -1,0 +1,89 @@
+<div class="contact-form-container">
+  <div class="form-header" data-aos="fade-up" data-aos-duration="800">
+    <h2>Get In Touch</h2>
+    <p>Have a technical question, a sales inquiry, or just want to chat? We'd love to hear from you.</p>
+  </div>
+
+  <div *ngIf="isSubmitted" class="success-message" data-aos="zoom-in" data-aos-duration="800">
+    <div class="success-icon" data-aos="bounce" data-aos-delay="200">✓</div>
+    <h3 data-aos="fade-up" data-aos-delay="400">Thank you for your message!</h3>
+    <p data-aos="fade-up" data-aos-delay="600">We'll get back to you within 24 hours.</p>
+  </div>
+
+  <form *ngIf="!isSubmitted" 
+        [formGroup]="contactForm" 
+        (ngSubmit)="onSubmit()" 
+        class="contact-form"
+        data-aos="fade-up" 
+        data-aos-delay="200"
+        data-aos-duration="800">
+    
+    <div class="form-group" data-aos="slide-right" data-aos-delay="300">
+      <label for="fullName">Full Name *</label>
+      <input 
+        type="text" 
+        id="fullName"
+        formControlName="fullName"
+        class="form-input"
+        [class.error]="f['fullName'].invalid && f['fullName'].touched"
+        placeholder="Enter your full name">
+      <div *ngIf="f['fullName'].invalid && f['fullName'].touched" class="error-message">
+        <span *ngIf="f['fullName'].errors?.['required']">Full name is required</span>
+        <span *ngIf="f['fullName'].errors?.['minlength']">Full name must be at least 2 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group" data-aos="slide-left" data-aos-delay="400">
+      <label for="workEmail">Work Email *</label>
+      <input 
+        type="email" 
+        id="workEmail"
+        formControlName="workEmail"
+        class="form-input"
+        [class.error]="f['workEmail'].invalid && f['workEmail'].touched"
+        placeholder="your.email@company.com">
+      <div *ngIf="f['workEmail'].invalid && f['workEmail'].touched" class="error-message">
+        <span *ngIf="f['workEmail'].errors?.['required']">Email is required</span>
+        <span *ngIf="f['workEmail'].errors?.['email']">Please enter a valid email address</span>
+      </div>
+    </div>
+
+    <div class="form-group" data-aos="slide-right" data-aos-delay="500">
+      <label for="companyName">Company Name (Optional)</label>
+      <input 
+        type="text" 
+        id="companyName"
+        formControlName="companyName"
+        class="form-input"
+        placeholder="Your company name">
+    </div>
+
+    <div class="form-group" data-aos="slide-left" data-aos-delay="600">
+      <label for="message">Message *</label>
+      <textarea 
+        id="message"
+        formControlName="message"
+        class="form-textarea"
+        [class.error]="f['message'].invalid && f['message'].touched"
+        rows="5"
+        placeholder="Tell us about your project or question..."></textarea>
+      <div *ngIf="f['message'].invalid && f['message'].touched" class="error-message">
+        <span *ngIf="f['message'].errors?.['required']">Message is required</span>
+        <span *ngIf="f['message'].errors?.['minlength']">Message must be at least 10 characters</span>
+      </div>
+    </div>
+
+    <button 
+      type="submit" 
+      class="submit-button"
+      [disabled]="isSubmitting"
+      data-aos="zoom-in" 
+      data-aos-delay="700">
+      <span *ngIf="!isSubmitting">Send Message</span>
+      <span *ngIf="isSubmitting" class="loading-text">
+        <span class="spinner"></span>
+        Sending...
+      </span>
+    </button>
+  </form>
+</div>

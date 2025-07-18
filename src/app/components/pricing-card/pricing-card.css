@@ -1,0 +1,125 @@
+.pricing-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.popular {
+  border-color: #4f46e5;
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(79, 70, 229, 0.2);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4f46e5;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-header h3 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.card-body {
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  color: #64748b;
+}
+
+.features-list li:last-child {
+  border-bottom: none;
+}
+
+.check-icon {
+  color: #10b981;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+.select-button {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #4f46e5;
+  background: transparent;
+  color: #4f46e5;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-button:hover {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.select-button.popular-button {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.select-button.popular-button:hover {
+  background: #3730a3;
+}
+
+@media screen and (max-width: 768px) {
+  .pricing-card.popular {
+    transform: none;
+    margin-top: 1rem;
+  }
+  
+  .price {
+    font-size: 2rem;
+  }
+}

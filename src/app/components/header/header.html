@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a routerLink="/">API PRO</a>
+    </div>
+    
+    <div class="nav-menu" [class.active]="isMenuOpen">
+      <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/about" class="nav-link" routerLinkActive="active">About</a>
+      <a routerLink="/pricing" class="nav-link" routerLinkActive="active">Pricing</a>
+      <a routerLink="/documentation" class="nav-link" routerLinkActive="active">Documentation</a>
+      <a routerLink="/contact" class="nav-link" routerLinkActive="active">Contact</a>
+    </div>
+    
+    <div class="nav-toggle" (click)="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>

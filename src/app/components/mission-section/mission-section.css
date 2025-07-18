@@ -1,0 +1,284 @@
+.mission {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.mission-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  /* Fallback animation */
+  animation: fallbackFadeUp 1s ease-out;
+}
+
+.mission-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  /* Fallback animation */
+  animation: fallbackFadeUp 1s ease-out 0.2s both;
+}
+
+.mission-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  /* Fallback animation */
+  animation: fallbackFadeUp 1s ease-out 0.4s both;
+}
+
+.mission-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-graphic {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  /* Fallback animation */
+  animation: fallbackFadeLeft 1s ease-out 0.2s both;
+}
+
+.orbit {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rotate linear infinite;
+}
+
+.orbit-1 {
+  width: 120px;
+  height: 120px;
+  top: 90px;
+  left: 90px;
+  animation-duration: 20s;
+}
+
+.orbit-2 {
+  width: 180px;
+  height: 180px;
+  top: 60px;
+  left: 60px;
+  animation-duration: 30s;
+}
+
+.orbit-3 {
+  width: 240px;
+  height: 240px;
+  top: 30px;
+  left: 30px;
+  animation-duration: 40s;
+}
+
+.planet {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  top: -20px;
+  left: -20px;
+  animation: counter-rotate linear infinite reverse;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.orbit-1 .planet {
+  animation-duration: 20s;
+}
+
+.orbit-2 .planet {
+  animation-duration: 30s;
+}
+
+.orbit-3 .planet {
+  animation-duration: 40s;
+}
+
+.center-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite alternate;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.core-icon {
+  font-size: 2rem;
+}
+
+/* Fallback Animations */
+@keyframes fallbackFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fallbackFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fixed Animation Keyframes */
+@keyframes rotate {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes counter-rotate {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(-360deg); 
+  }
+}
+
+@keyframes pulse {
+  from { 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to { 
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+/* Enhanced Responsive Design */
+@media screen and (max-width: 768px) {
+  .mission {
+    padding: 4rem 0;
+  }
+  
+  .mission-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .mission-content h2 {
+    font-size: 2rem;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .mission-content p {
+    font-size: 1rem;
+  }
+  
+  .mission-graphic {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .orbit-1 {
+    width: 100px;
+    height: 100px;
+    top: 75px;
+    left: 75px;
+  }
+  
+  .orbit-2 {
+    width: 150px;
+    height: 150px;
+    top: 50px;
+    left: 50px;
+  }
+  
+  .orbit-3 {
+    width: 200px;
+    height: 200px;
+    top: 25px;
+    left: 25px;
+  }
+  
+  .planet {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    top: -17.5px;
+    left: -17.5px;
+  }
+  
+  .center-core {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .core-icon {
+    font-size: 1.8rem;
+  }
+}
+
+/* Performance optimizations */
+.orbit, .planet, .center-core {
+  will-change: transform;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .orbit,
+  .planet,
+  .center-core {
+    animation: none !important;
+  }
+  
+  .mission-content h2,
+  .mission-content h3,
+  .mission-content p,
+  .mission-graphic {
+    animation: none !important;
+  }
+}

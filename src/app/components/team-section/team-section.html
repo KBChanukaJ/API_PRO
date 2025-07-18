@@ -1,0 +1,41 @@
+<section class="team">
+  <div class="team-container">
+    <div class="team-header" data-aos="fade-up" data-aos-duration="800">
+      <h2>The Team Behind API PRO</h2>
+    </div>
+    
+    <div *ngIf="loading" class="loading" data-aos="fade-up">
+      <div class="spinner"></div>
+      <p>Loading our amazing team...</p>
+    </div>
+    
+    <div *ngIf="error" class="error" data-aos="fade-up">
+      <p>{{ error }}</p>
+    </div>
+    
+    <div *ngIf="!loading && !error" class="team-grid">
+      <div class="team-card" 
+           *ngFor="let member of teamMembers; let i = index" 
+           data-aos="flip-left" 
+           [attr.data-aos-delay]="i * 100"
+           data-aos-duration="800">
+        <div class="member-avatar" data-aos="zoom-in" [attr.data-aos-delay]="200 + (i * 100)">
+          <span>{{ member.name.charAt(0) }}</span>
+        </div>
+        <h3 data-aos="fade-up" [attr.data-aos-delay]="300 + (i * 100)">
+          {{ member.name }}
+        </h3>
+        <p class="member-email" data-aos="fade-up" [attr.data-aos-delay]="400 + (i * 100)">
+          {{ member.email }}
+        </p>
+        <a [href]="'https://' + member.website" 
+           target="_blank" 
+           class="member-website"
+           data-aos="fade-up" 
+           [attr.data-aos-delay]="500 + (i * 100)">
+          {{ member.website }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

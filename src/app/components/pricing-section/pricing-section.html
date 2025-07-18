@@ -1,0 +1,18 @@
+<section class="pricing">
+  <div class="pricing-container">
+    <div class="pricing-header" data-aos="fade-up" data-aos-duration="800">
+      <h2>Simple, Transparent Pricing for Teams of All Sizes</h2>
+      <p>Start for free and scale as you go. No hidden fees, ever.</p>
+    </div>
+    
+    <div class="pricing-grid">
+      <app-pricing-card 
+        *ngFor="let plan of pricingPlans; let i = index" 
+        [plan]="plan"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="200 + (i * 200)"
+        data-aos-duration="800">
+      </app-pricing-card>
+    </div>
+  </div>
+</section>

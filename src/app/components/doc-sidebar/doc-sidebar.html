@@ -1,0 +1,52 @@
+<aside class="sidebar">
+  <div class="sidebar-content" data-aos="slide-right" data-aos-duration="800">
+    <div class="sidebar-header" data-aos="fade-down" data-aos-delay="200">
+      <h2>📖 Documentation</h2>
+      <p>Complete API Reference</p>
+    </div>
+
+    <div class="search-section" data-aos="fade-up" data-aos-delay="300">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search documentation..." class="search-input">
+      </div>
+    </div>
+    
+    <div *ngFor="let category of getCategories(); let catIndex = index" 
+         class="nav-section"
+         data-aos="fade-up"
+         [attr.data-aos-delay]="400 + (catIndex * 100)">
+      <h3 class="category-title">{{ category }}</h3>
+      <ul class="nav-list">
+        <li *ngFor="let item of getItemsByCategory(category); let i = index" 
+            class="nav-item"
+            data-aos="slide-right"
+            [attr.data-aos-delay]="500 + (catIndex * 100) + (i * 50)">
+          <a 
+            href="#" 
+            (click)="selectItem(item.id); $event.preventDefault()"
+            [class.active]="activeItem === item.id"
+            class="nav-link">
+            <span class="nav-icon">{{ item.icon }}</span>
+            <span class="nav-text">{{ item.title }}</span>
+            <span *ngIf="activeItem === item.id" class="active-indicator">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-footer" data-aos="fade-up" data-aos-delay="1000">
+      <div class="help-section">
+        <h4>Need Help?</h4>
+        <a href="#" class="help-link">
+          <span>💬</span>
+          Contact Support
+        </a>
+        <a href="#" class="help-link">
+          <span>🐛</span>
+          Report Issue
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>

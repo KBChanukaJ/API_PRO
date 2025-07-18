@@ -1,0 +1,25 @@
+<section class="features">
+  <div class="features-container">
+    <div class="features-header" data-aos="fade-up" data-aos-duration="800">
+      <h2>Everything You Need in One Platform</h2>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card" 
+           *ngFor="let feature of features; let i = index" 
+           data-aos="fade-up-scale" 
+           [attr.data-aos-delay]="200 + (i * 200)"
+           data-aos-duration="800">
+        <div class="feature-icon" data-aos="bounce" [attr.data-aos-delay]="400 + (i * 200)">
+          {{ feature.icon }}
+        </div>
+        <h3 data-aos="fade-up" [attr.data-aos-delay]="600 + (i * 200)">
+          {{ feature.title }}
+        </h3>
+        <p data-aos="fade-up" [attr.data-aos-delay]="800 + (i * 200)">
+          {{ feature.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

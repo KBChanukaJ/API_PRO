@@ -1,0 +1,17 @@
+<section class="social-proof">
+  <div class="social-proof-container">
+    <h2 data-aos="fade-up" data-aos-duration="800">
+      Trusted by the World's Most Innovative Companies
+    </h2>
+    
+    <div class="companies-grid">
+      <div class="company-logo" 
+           *ngFor="let company of companies; let i = index"
+           data-aos="fade-up"
+           [attr.data-aos-delay]="200 + (i * 100)"
+           data-aos-duration="600">
+        <span>{{ company }}</span>
+      </div>
+    </div>
+  </div>
+</section>

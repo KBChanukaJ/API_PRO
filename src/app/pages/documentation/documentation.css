@@ -1,0 +1,44 @@
+.documentation-page {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+.doc-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 3rem 0;
+}
+
+.doc-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.doc-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.doc-header p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
+.doc-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: calc(100vh - 200px);
+}
+
+@media screen and (max-width: 768px) {
+  .doc-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .doc-header h1 {
+    font-size: 2rem;
+  }
+}
